@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MMC Originals</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+    body { background: #f4f4f4; color: #333; line-height: 1.6; scroll-behavior: smooth; }
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #000;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    nav a { color: #fff; text-decoration: none; margin-left: 20px; font-size: 14px; }
+    header {
+      background: linear-gradient(135deg, #000, #222);
+      color: #fff;
+      padding: 140px 20px 80px;
+      text-align: center;
+    }
+    .logo {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #111, #666);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      font-weight: bold;
+      margin: 0 auto 25px;
+      color: #fff;
+      letter-spacing: 3px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    section.show { opacity: 1; transform: translateY(0); }
+    h2 { margin-bottom: 20px; color: #000; font-size: 32px; }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+      font-weight: 500;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    }
+    .contact {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      border-radius: 20px;
+    }
+    .contact a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      border-radius: 30px;
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      font-size: 15px;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      color: #777;
+    }
+    @media(max-width: 600px) {
+      h2 { font-size: 26px; }
+      nav a { margin-left: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <strong style="color:#fff">MMC Originals</strong>
+  <div>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header>
+  <div class="logo">MMC</div>
+  <h1>MMC Originals</h1>
+  <p>Original Ideas • Original Style • Original Quality</p>
+</header>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>
+    MMC Originals is a modern business built on creativity, quality, and originality.
+    We help brands and individuals stand out through unique products and innovative solutions.
+  </p>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card">Custom Products & Merchandising</div>
+    <div class="card">Brand Design & Identity</div>
+    <div class="card">Creative Business Solutions</div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <p>Let’s work together</p>
+  <a href="tel:+27735301736">📞 Call Us</a>
+  <a href="https://wa.me/27735301736">💬 WhatsApp</a>
+  <a href="mailto:mnqobicele26@gmail.com">✉️ Email</a>
+</section>
+
+<footer>
+  &copy; 2026 MMC Originals. All rights reserved.
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section');
+  const revealOnScroll = () => {
+    sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
+      if (sectionTop < window.innerHeight - 100) {
+        section.classList.add('show');
+      }
+    });
+  };
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
+</script>
+
+</body>
+</html>
