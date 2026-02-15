@@ -1,22 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>MMC Originals</title>
+
 <style>
-  body {font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4;}
-  header {background:#000; color:#fff; text-align:center; padding:20px;}
-  header h1 {margin:0;}
-  section {padding:40px 20px; text-align:center;}
+  body {font-family: Arial, sans-serif; margin:0; background:#f4f4f4;}
+  header {background:#000; color:#fff; text-align:center; padding:30px 20px;}
+  section {padding:50px 20px; text-align:center;}
   h2 {margin-bottom:20px;}
-  .contact form {background:#fff; padding:20px; border-radius:15px; max-width:500px; margin:20px auto; box-shadow:0 6px 20px rgba(0,0,0,0.1);}
-  .contact input, .contact textarea {width:100%; padding:10px; margin-top:6px; margin-bottom:12px; border-radius:8px; border:1px solid #ccc;}
-  .contact button {background:#000; color:#fff; padding:12px 25px; border:none; border-radius:30px; cursor:pointer; font-size:16px;}
-  .contact button:hover {background:#333;}
-  a {display:inline-block; margin:10px; text-decoration:none; color:#000;}
+
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .product-card {
+    background:#fff;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.1);
+  }
+
+  .product-img {
+    width:100%;
+    max-width:220px;
+    border-radius:12px;
+    margin-bottom:10px;
+  }
+
+  .buy-btn {
+    display:inline-block;
+    margin-top:10px;
+    padding:10px 20px;
+    background:#000;
+    color:#fff;
+    text-decoration:none;
+    border-radius:25px;
+  }
+
+  .buy-btn:hover { background:#333; }
+
+  .contact form {
+    background:#fff;
+    padding:20px;
+    border-radius:15px;
+    max-width:500px;
+    margin:20px auto;
+    box-shadow:0 6px 20px rgba(0,0,0,0.1);
+  }
+
+  .contact input, .contact textarea {
+    width:100%;
+    padding:10px;
+    margin-top:6px;
+    margin-bottom:12px;
+    border-radius:8px;
+    border:1px solid #ccc;
+  }
+
+  .contact button {
+    background:#000;
+    color:#fff;
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+  }
+
+  .contact button:hover { background:#333; }
+
+  a {color:#000; text-decoration:none;}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -26,40 +87,45 @@
 
 <section id="about">
   <h2>About Us</h2>
-  <p>Welcome to MMC Originals! We offer unique products that set trends and elevate your style.</p>
+  <p>MMC Originals offers stylish, affordable products for everyday life. Trendy. Simple. Original.</p>
 </section>
 
-<section id="services">
+<section id="products">
   <h2>Our Products</h2>
-  <p>High-quality, trend-setting items that make you stand out.</p>
+
+  <div class="products">
+
+    <!-- PRODUCT 1 -->
+    <div class="product-card">
+      <img src="backpack.jpg" alt="Unisex Casual Backpack Leather" class="product-img">
+      <h3>Unisex Casual Backpack (Leather)</h3>
+      <p>Stylish and durable backpack for everyday use.</p>
+      <p><strong>Price:</strong> R280</p>
+      <a class="buy-btn" 
+         href="https://wa.me/27735301736?text=Hi%20I%20want%20to%20buy%20the%20Unisex%20Casual%20Backpack%20(Leather)" 
+         target="_blank">
+        Order on WhatsApp
+      </a>
+    </div>
+
+  </div>
 </section>
 
 <section id="contact" class="contact">
   <h2>Contact Us</h2>
-  <p>Send us a message!</p>
+  <p>Send us a message</p>
 
   <form name="contact" method="POST" data-netlify="true">
     <input type="hidden" name="form-name" value="contact" />
-    <p>
-      <label>Your Name:<br />
-      <input type="text" name="name" required /></label>
-    </p>
-    <p>
-      <label>Email:<br />
-      <input type="email" name="email" required /></label>
-    </p>
-    <p>
-      <label>Message:<br />
-      <textarea name="message" rows="4" required></textarea></label>
-    </p>
-    <p>
-      <button type="submit">Send Message</button>
-    </p>
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
   </form>
 
   <div style="margin-top:20px;">
-    <a href="tel:+27735301736">📞 Call Us</a>
-    <a href="https://wa.me/27735301736">💬 WhatsApp</a>
+    <a href="tel:+27735301736">📞 Call</a> |
+    <a href="https://wa.me/27735301736">💬 WhatsApp</a> |
     <a href="mailto:mnqobicele26@gmail.com">✉️ Email</a>
   </div>
 </section>
